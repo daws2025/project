@@ -40,10 +40,10 @@ CHECK_ROOT
 dnf install nginx -y &>>$LOGS
 VALIDATE $? "installing nginx"
 
-dnf enable nginx -y &>>$LOGS
+systemctl enable nginx -y &>>$LOGS
 VALIDATE $? "enabling nginx"
 
-dnf start nginx -y &>>$LOGS
+systemctl  start nginx -y &>>$LOGS
 VALIDATE $? "starting nginx" 
 
 rm -rf /usr/share/nginx/html/* &>>$LOGS
