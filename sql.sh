@@ -24,7 +24,7 @@ fi
 CHECK_ROOT()
 if [ $USERID -ne 0 ]
 then
-    echo "$R You do not have sudo access $N"
+    echo -e "$R You do not have sudo access $N"
     exit 1
 fi
 
