@@ -1,10 +1,10 @@
 #!/bin/bash
 USERID=$(id -u)
 
-R="[\e31m"
-Y="[\e33m"
-G="[\e32m"
-N="[\e0m"
+R="\e[31m"
+Y="\e[33m"
+G="\e[32m"
+N="\e[0m"
 
 LOG_FOLDER="/var/log/project-logs"
 LOG_FILE=$(echo $0 | cut -d '.' -f1)
