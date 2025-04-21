@@ -7,9 +7,9 @@ G="\e[32m"
 N="\e[0m"
 
 LOG_FOLDER="/var/log/project-logs"
-LOG_FILE=$(echo $0 | cut -d '.' -f1)
+LOG_FILE=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%Y-%m-%d) 
-LOGS="$LOG_FOLDER/$LOG_FILE_$TIMESTAMP.log"
+LOGS="$LOG_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 
 mkdir -p /var/log/project-logs
 
