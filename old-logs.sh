@@ -12,7 +12,7 @@ LOGS=$LOG_FOLDER/$LOG_FILE-$TIMETSTAMP.log
 
 SRC_DIR=$1
 DEST_DIR=$2
-DAYS=$(3: +14)  #if user is not providing any value for no. of days, 14 will be default
+DAYS=$(3: -14)  #if user is not providing any value for no. of days, 14 will be default
 
 USERID=$(id -u)
 CHECK_ROOT()
