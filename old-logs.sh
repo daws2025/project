@@ -52,9 +52,9 @@ dnf install zip unzip -y
 
 if [ -n $FILES ]
 then
-    ZIP_FILE=$("$DEST_DIR/app-logs-$TIMESTAMP.log")
+    ZIP_FILE=$("$DEST_DIR/app-logs-$TIMESTAMP.zip")
     $FILES | zip -@ $ZIP_FILE
-    if [ -f $ZIP_FILE ]
+    if [ -f "$ZIP_FILE" ]
     then
         echo "zip file created successfully"
         while read -r filepath
