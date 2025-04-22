@@ -14,6 +14,14 @@ SRC_DIR=$1
 DEST_DIR=$2
 DAYS=$(3:14)  #if ueser is not providing any value for no. of days, 14 will be default
 
+USERID=$(id -u)
+CHECK_ROOT()
+if [ $USERID -ne 0 ]
+then
+    echo "you don't have root access"
+    exit 1
+fi
+
 USAGE
 {
     echo -e "$R USAGE:: $N sh old-logs.sh SRC_DIR DEST_DIR Days(Optional)"
@@ -38,6 +46,9 @@ then
 fi
 
 FILES=$(find $SRC_DIR -name "*.log" -mtime +$DAYS)
+
+CHECK_ROOT
+dnf install zip unzip -y
 
 if [ -n $FILES ]
 then
